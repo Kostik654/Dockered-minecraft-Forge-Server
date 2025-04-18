@@ -26,8 +26,6 @@ WORKDIR /minecraft
 
 EXPOSE 25565
 
-# Запуск сервера с использованием переменных окружения
-
 #ENTRYPOINT java -Xmx${JVM_XMX} -Xms${JVM_XMS} -jar ${SERVER_JAR} nogui
 
 CMD java -Djava.awt.headless=true -Xmx${JVM_XMX} -Xms${JVM_XMS} -jar ${SERVER_JAR} nogui
