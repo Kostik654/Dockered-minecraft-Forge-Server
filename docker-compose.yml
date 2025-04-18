@@ -7,10 +7,10 @@ services:
     environment:
       - JVM_XMX=2048M
       - JVM_XMS=1024M
-      - SERVER_JAR=forge_server.jar # vanilla_ OR forge_
+      - SERVER_JAR=forge_server.jar
     volumes:
       - ./minecraft:/minecraft
-    stdin_open: true  # Включает stdin
-    tty: true          # Включает TTY
+    stdin_open: true
+    tty: true
     restart: "no"
     entrypoint: ["/bin/sh", "-c", "/tmp/init.sh"]
