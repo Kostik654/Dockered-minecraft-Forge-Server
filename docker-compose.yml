@@ -1,0 +1,16 @@
+services:
+  minecraft-server:
+    image: mcsrv:fX.X.X
+    container_name: mc-srv-Forge-X.X.X
+    ports:
+      - "25565:25565"
+    environment:
+      - JVM_XMX=2048M
+      - JVM_XMS=1024M
+      - SERVER_JAR=forge_server.jar # vanilla_ OR forge_
+    volumes:
+      - ./minecraft:/minecraft
+    stdin_open: true  # Включает stdin
+    tty: true          # Включает TTY
+    restart: "no"
+    entrypoint: ["/bin/sh", "-c", "/tmp/init.sh"]
