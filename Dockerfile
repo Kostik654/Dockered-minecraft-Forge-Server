@@ -11,12 +11,12 @@ ENV SERVER_JAR=forge_server.jar
 
 WORKDIR /tmp/minecraft
 
-COPY ./forge*.jar /tmp/minecraft/forge-installer.jar
+COPY ./image_files/forge*.jar /tmp/minecraft/forge-installer.jar
 
-COPY ./server-icon.png /tmp/minecraft/server-icon.png
+COPY ./image_files/server-icon.png /tmp/minecraft/server-icon.png
 
-COPY ./prepare.sh /tmp/prepare.sh
-COPY ./init.sh /tmp/init.sh
+COPY ./image_files/prepare.sh /tmp/prepare.sh
+COPY ./image_files/init.sh /tmp/init.sh
 
 RUN chmod +x /tmp/*.sh
 
