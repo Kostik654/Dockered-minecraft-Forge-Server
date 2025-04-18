@@ -13,6 +13,8 @@ MOUNT_DIR=./minecraft
 
 SERVER_PORT=25565
 
+# EXAMPLE
+# wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-installer.jar -O forge-1.12.2-installer.jar
 
 /usr/bin/docker build --no-cache -t $IMAGE_NAME .
 
