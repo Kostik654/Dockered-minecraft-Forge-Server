@@ -1,13 +1,27 @@
+  GNU nano 7.2                                                                                        start.sh
 #!/bin/bash
 
-/usr/bin/docker build --no-cache -t mcsrv:f1.12.2 .
+set -e
 
-/usr/bin/docker compose up -d
+IMAGE_NAME="mcsrv:fX.X.X"
+CONTAINER_NAME="mc-srv-Forge-X.X.X"
 
-/usr/bin/docker attach mc-srv-Forge-1.12.2
+XMX_=2048M
+XMS_=1024M
 
-/usr/bin/docker restart mc-srv-Forge-1.12.2
+MOUNT_DIR=./minecraft
 
-/usr/bin/docker attach mc-srv-Forge-1.12.2
+SERVER_PORT=25565
+
+
+/usr/bin/docker build --no-cache -t $IMAGE_NAME .
+
+IMG_NAME="$IMAGE_NAME" CONT_NAME="$CONTAINER_NAME" SRV_PORT="$SERVER_PORT" XMX="$XMX_" XMS="$XMS_" MNT_DIR="$MOUNT_DIR" /usr/bin/docker compose up -d
+
+/usr/bin/docker attach $CONTAINER_NAME
+
+/usr/bin/docker restart $CONTAINER_NAME
+
+/usr/bin/docker attach $CONTAINER_NAME
 
 exit
