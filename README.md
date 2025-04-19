@@ -1,4 +1,4 @@
-# dockered-mc-forge-server
+# Dockered Minecraft Forge Server
 A simple solution for quick deployment of Minecraft Forge Server on Linux
 
 
