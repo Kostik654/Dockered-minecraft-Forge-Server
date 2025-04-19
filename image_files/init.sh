@@ -14,11 +14,11 @@ cd $MOUNTED_DIR
 # DO NOT TOUCH
 sed -i 's/^server-ip=.*/server-ip=/' server.properties
 
-# ONLINE MODE DISABLE
+# ONLINE MODE AUTO DISABLE
 sed -i 's/^online-mode=.*/online-mode=false/' server.properties
 
-# WHITE LIST
+# WHITE LIST AUTO ENABLE
 sed -i 's/^white-list=.*/white-list=true/' server.properties
 
-# Запуск сервера
+# Start server
 exec java -Djava.awt.headless=true -Xmx${JVM_XMX} -Xms${JVM_XMS} -jar ${SERVER_JAR} nogui
