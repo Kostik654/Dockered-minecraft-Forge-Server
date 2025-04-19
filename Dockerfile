@@ -9,18 +9,18 @@ ENV SERVER_JAR=forge_server.jar
 #    apt-get clean && \
 #    rm -rf /var/lib/apt/lists/*
 
-WORKDIR /tmp/minecraft
+WORKDIR /server_files/minecraft
 
-COPY ./image_files/forge*.jar /tmp/minecraft/forge-installer.jar
+COPY ./image_files/forge*.jar /server_files/minecraft/forge-installer.jar
 
-COPY ./image_files/server-icon.png /tmp/minecraft/server-icon.png
+COPY ./image_files/server-icon.png /server_files/minecraft/server-icon.png
 
-COPY ./image_files/prepare.sh /tmp/prepare.sh
-COPY ./image_files/init.sh /tmp/init.sh
+COPY ./image_files/prepare.sh /server_files/prepare.sh
+COPY ./image_files/init.sh /server_files/init.sh
 
-RUN chmod +x /tmp/*.sh
+RUN chmod +x /server_files/*.sh
 
-RUN /tmp/prepare.sh
+RUN /server_files/prepare.sh
 
 WORKDIR /minecraft
 

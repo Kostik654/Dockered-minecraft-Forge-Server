@@ -13,5 +13,5 @@ services:
     stdin_open: true
     tty: true
     restart: "no"
-    entrypoint: ["/bin/sh", "-c", "/tmp/init.sh"]
+    entrypoint: ["/bin/sh", "-c", "/server_files/init.sh"]
     

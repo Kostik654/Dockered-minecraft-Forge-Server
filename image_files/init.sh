@@ -1,9 +1,9 @@
 #!/bin/sh
 
 MOUNTED_DIR=/minecraft
-SRC_DIR=/tmp/minecraft
+SRC_DIR=/server_files/minecraft
 
-cp -rn /tmp/minecraft/* $MOUNTED_DIR/
+cp -rn /server_files/minecraft/* $MOUNTED_DIR/
 
 # rsync -av --ignore-existing $SRC_DIR/* $MOUNTED_DIR/
 
