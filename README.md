@@ -1,2 +1,51 @@
 # dockered-mc-forge-server
 A simple solution for quick deployment of Minecraft Forge Server on Linux
+
+
+------------
+
+#### Installation
+
+1. Download the Forge server installation **jar** file and place it in the root of this project. For example:
+```
+wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-installer.jar -O forge-1.12.2-installer.jar
+```
+The file name must match the [forge*.jar] template.
+2. In the file **install.sh** edit the variables according to your requirements:
+```
+IMAGE_NAME="mcsrv:fX.X.X"
+CONTAINER_NAME="mc-srv-Forge-X.X.X"
+# MAX RAM
+XMX_=2048M
+# MIN RAM
+XMS_=1024M
+# Folder for storing container files
+MOUNT_DIR=./minecraft
+# The server port for the external connections
+SERVER_PORT=25565
+```
+3. In the file **./image_files/init.sh** you can comment or edit the following lines if necessary:
+```
+# ONLINE MODE AUTO DISABLE
+sed -i 's/^online-mode=.*/online-mode=false/' server.properties
+# WHITE LIST AUTO ENABLE
+sed -i 's/^white-list=.*/white-list=true/' server.properties
+```
+4. You can pre-place any custom server files (world, mods, server.properties, etc.) in the directory **./minecraft** (or any other directory specified in the $MOUNT_DIR variable in the file **init.sh**)
+They will not be affected when the server is started.
+
+5. Run the file **install.sh** preferably on behalf of the superuser:
+```
+sudo /home/userx/dockered-mc-forge-server/install.sh
+```
+Immediately after launch, the image will be built and launched via docker compose.
+
+After the first launch, the terminal will be connected to the main process inside the container, the I/O stream of the minecraft server. it is necessary to write **stop** in the server console immediately after the end of its launch. It will then be automatically restarted.
+
+6. The server is now running successfully.
+You can disconnect from viewing the container by using **Ctrl + P** and then **Ctrl + Q**
+
+In the future, you can connect back to the container to manage the server using the command:
+```
+docker attach <container_name>
+```
