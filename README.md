@@ -50,7 +50,7 @@ After the first launch, the terminal will be connected to the main process insid
 6. The server is now running successfully.
 You can disconnect from viewing the container by using **Ctrl + P** and then **Ctrl + Q**
 
-In the future, you can connect back to the container to manage the server using the command:
+7. In the future, you can connect back to the container to manage the server using the command:
 ```
 docker attach <container_name>
 ```
