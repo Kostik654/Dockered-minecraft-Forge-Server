@@ -1,9 +1,10 @@
 #!/bin/sh
 
+# CONSTANT VARS
 MOUNTED_DIR=/minecraft
 SRC_DIR=/server_files/minecraft
 
-cp -rn /server_files/minecraft/* $MOUNTED_DIR/
+cp -rn $SRC_DIR/* $MOUNTED_DIR/
 
 # rsync -av --ignore-existing $SRC_DIR/* $MOUNTED_DIR/
 
