@@ -39,13 +39,9 @@ sed -i 's/^online-mode=.*/online-mode=false/' server.properties
 sed -i 's/^white-list=.*/white-list=true/' server.properties
 ```
 
-5. Run the file **install.sh** preferably on behalf of the superuser:
-```
-sudo /home/userx/dockered-mc-forge-server/install.sh
-```
-Immediately after launch, the image will be built and launched via docker compose.
+5. Run the file **install.sh** preferably on behalf of the superuser.
 
-After the first launch, the terminal will be connected to the main process inside the container, the I/O stream of the minecraft server. it is necessary to write **stop** in the server console immediately after the end of its launch. It will then be automatically restarted.
+Immediately after launch, the image will be built and launched via docker compose. Next, the terminal will be connected to the main process inside the container, the I/O stream of the minecraft server. it is necessary to write **stop** in the server console immediately after the end of its launch. It will then be automatically restarted.
 
 6. The server is now running successfully.
 You can disconnect from viewing the container by using **Ctrl + P** and then **Ctrl + Q**
