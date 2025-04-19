@@ -4,7 +4,9 @@ A simple solution for quick deployment of Minecraft Forge Server on Linux
 
 ------------
 
-#### Installation
+
+### INSTALLATION
+------------
 
 1. Download the Forge server installation **jar** file and place it in the root of this project. For example:
 ```
