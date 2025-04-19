@@ -28,16 +28,16 @@ MOUNT_DIR=./minecraft
 SERVER_PORT=25565
 ```
 
-3. In the file **./image_files/init.sh** you can comment or edit the following lines if necessary:
+3. You can pre-place any custom server files (world, mods, server.properties, etc.) in the directory **./minecraft** (or any other directory specified in the $MOUNT_DIR variable in the file **install.sh**)
+They will not be affected when the server is started.
+
+4. In the file **./image_files/init.sh** you can comment or edit the following lines if necessary:
 ```
 # ONLINE MODE AUTO DISABLE
 sed -i 's/^online-mode=.*/online-mode=false/' server.properties
 # WHITE LIST AUTO ENABLE
 sed -i 's/^white-list=.*/white-list=true/' server.properties
 ```
-
-4. You can pre-place any custom server files (world, mods, server.properties, etc.) in the directory **./minecraft** (or any other directory specified in the $MOUNT_DIR variable in the file **init.sh**)
-They will not be affected when the server is started.
 
 5. Run the file **install.sh** preferably on behalf of the superuser:
 ```
