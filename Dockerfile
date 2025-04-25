@@ -1,8 +1,12 @@
 FROM openjdk:8-jdk
 
-ENV JVM_XMX=2048M
-ENV JVM_XMS=1024M
-ENV SERVER_JAR=forge_server.jar
+ARG JVM_XMX_=2048M
+ARG JVM_XMS_=1024M
+ARG SERVER_JAR_=forge_server.jar
+
+ENV JVM_XMX=${JVM_XMX_}
+ENV JVM_XMS=${JVM_XMS_}
+ENV SERVER_JAR=${SERVER_JAR_}
 
 #RUN apt-get update && \
 #    apt-get install -y rsync && \

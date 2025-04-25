@@ -1,17 +1,21 @@
 services:
   minecraft-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SERVER_JAR_: ${SERVER_JAR}
+        JVM_XMS_: ${JVM_XMS}
+        JVM_XMX_: ${JVM_XMX}
     image: ${IMG_NAME}
     container_name: ${CONT_NAME}
     ports:
       - "${SRV_PORT}:25565"
-    environment:
-      - JVM_XMX=${XMX}
-      - JVM_XMS=${XMS}
-      - SERVER_JAR=forge_server.jar
+    env_file:
+      - ./.env
     volumes:
       - ${MNT_DIR}:/minecraft
     stdin_open: true
     tty: true
     restart: "no"
     entrypoint: ["/bin/sh", "-c", "/server_files/init.sh"]
-    
