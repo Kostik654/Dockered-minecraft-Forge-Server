@@ -8,9 +8,9 @@ A simple solution for quick deployment of Minecraft Forge Server on Linux
 ### INSTALLATION
 ------------
 
-1. Download the Forge server installation **jar** file and place it in the root of this project. For example:
+1. Download the Forge server installation **jar** file and place it in the ./image_files/ folder of this project. For example:
 ```
-wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-installer.jar -O forge-1.12.2-installer.jar
+wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-installer.jar -O ./image_files/forge-1.12.2-installer.jar
 ```
 The file name must match the [forge*.jar] template.
 

@@ -13,7 +13,7 @@ MOUNT_DIR=./minecraft
 SERVER_PORT=25565
 
 # EXAMPLE
-# wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-installer.jar -O forge-1.12.2-installer.jar
+# wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2859/forge-1.12.2-14.23.5.2859-installer.jar -O ./image_files/forge-1.12.2-installer.jar
 
 cat <<EOF > ./.env
 JVM_XMX=${XMX_}
