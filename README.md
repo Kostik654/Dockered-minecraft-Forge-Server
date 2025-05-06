@@ -23,7 +23,9 @@ FVERSION="1.21.5-55.0.9"
 JDK_V="eclipse-temurin:21-jdk"
 IMAGE_NAME="mcsrv:f${FVERSION}"
 CONTAINER_NAME="mc-srv-Forge-${FVERSION}"
+# MAX RAM
 XMX_=2048M
+# MIN RAM
 XMS_=1024M
 # Folder for storing container files
 MOUNT_DIR=./minecraft
