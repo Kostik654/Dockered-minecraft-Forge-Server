@@ -17,10 +17,13 @@ The file name must match the [forge*.jar] template.
 2. In the file **install.sh** edit the variables according to your requirements:
 ```
 IMAGE_NAME="mcsrv:fX.X.X"
-CONTAINER_NAME="mc-srv-Forge-X.X.X"
-# MAX RAM
+# https://files.minecraftforge.net/net/minecraftforge/forge/
+FVERSION="1.21.5-55.0.9"
+# https://hub.docker.com/
+JDK_V="eclipse-temurin:21-jdk"
+IMAGE_NAME="mcsrv:f${FVERSION}"
+CONTAINER_NAME="mc-srv-Forge-${FVERSION}"
 XMX_=2048M
-# MIN RAM
 XMS_=1024M
 # Folder for storing container files
 MOUNT_DIR=./minecraft

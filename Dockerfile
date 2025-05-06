@@ -1,17 +1,11 @@
-FROM openjdk:8-jdk
-
 ARG JVM_XMX_=2048M
 ARG JVM_XMS_=1024M
 ARG SERVER_JAR_=forge_server.jar
+ARG JV_=openjdk:8-jdk
 
-ENV JVM_XMX=${JVM_XMX_}
-ENV JVM_XMS=${JVM_XMS_}
-ENV SERVER_JAR=${SERVER_JAR_}
+FROM ${JV_} AS main
 
-#RUN apt-get update && \
-#    apt-get install -y rsync && \
-#    apt-get clean && \
-#    rm -rf /var/lib/apt/lists/*
+RUN echo "JDK version: ${JV_}"
 
 WORKDIR /server_files/minecraft
 
@@ -30,6 +24,6 @@ WORKDIR /minecraft
 
 EXPOSE 25565
 
-#ENTRYPOINT java -Xmx${JVM_XMX} -Xms${JVM_XMS} -jar ${SERVER_JAR} nogui
+# ENTRYPOINT java -Xmx${JVM_XMX_} -Xms${JVM_XMS_} -jar ${SERVER_JAR_} nogui
 
-CMD java -Djava.awt.headless=true -Xmx${JVM_XMX} -Xms${JVM_XMS} -jar ${SERVER_JAR} nogui
+CMD java -Djava.awt.headless=true -Xmx${JVM_XMX_} -Xms${JVM_XMS_} -jar ${SERVER_JAR_} nogui
